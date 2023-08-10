@@ -1,0 +1,21 @@
+---
+- name: Restart ipahealthcheck-exporter
+  ansible.builtin.systemd:
+    name: ipahealthcheck-exporter
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+
+- name: Restart ipa-healthcheck service
+  ansible.builtin.systemd:
+    name: ipa-healthcheck.service
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+
+- name: Restart ipa-healthcheck timer
+  ansible.builtin.systemd:
+    name: ipa-healthcheck.timer
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
