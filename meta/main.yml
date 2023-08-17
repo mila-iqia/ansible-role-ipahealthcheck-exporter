@@ -1,8 +1,8 @@
 galaxy_info:
-  role_name: ipahealthcheck-exporter
+  role_name: ipahealthcheck_exporter
   namespace: mila
   author: Pierre Bouchez
-  description: Install ipahealtcheck_exporter to expose Freeipa metrics to Prometheus
+  description: Install ipahealthcheck_exporter to expose FreeIPA metrics to Prometheus
   company: Mila
 
   # If the issue tracker for your role is not on github, uncomment the
@@ -18,7 +18,7 @@ galaxy_info:
   # - CC-BY-4.0
   license: MIT
 
-  min_ansible_version: 2.9
+  min_ansible_version: '2.15'
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
@@ -43,7 +43,7 @@ galaxy_info:
 
   galaxy_tags: # Maximum 20 tags per role.
     - freeipa
-    - ipa-healthcheck
+    - ipahealthcheck
     - prometheus
 
 dependencies: []
