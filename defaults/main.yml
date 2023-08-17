@@ -2,7 +2,7 @@
 # Run ipa-healtcheck every minute
 ipahealthcheck_timer: "*-*-* *:*:00"
 
-ipahealthcheck_exporter_download_url: https://github.com/camptocamp/ipahealthcheck_exporter/releases/download/v0.0.14-rc7/ipahealthcheck_exporter-0.0.14-rc7.linux-amd64.tar.gz
+ipahealthcheck_exporter_download_url: https://github.com/camptocamp/ipahealthcheck_exporter/releases/download/v0.0.14-rc7/ipahealthcheck_exporter-0.0.14-rc7.linux-amd64.tar.gz  # noqa yaml[line-length]
 ipahealthcheck_exporter_user: ipahealthcheck-exporter
 ipahealthcheck_exporter_group: ipahealthcheck-exporter
 ipahealthcheck_exporter_install_path: "/var/lib/{{ ipahealthcheck_exporter_user }}"

@@ -3,14 +3,14 @@
   ansible.builtin.template:
     src: ipahealthcheck-exporter.service.j2
     dest: /usr/lib/systemd/system/ipahealthcheck-exporter.service
-    mode: 0644
+    mode: "0644"
   notify: Restart ipahealthcheck-exporter
 
 - name: Copy the ipa-healthcheck timer
   ansible.builtin.template:
     src: ipa-healthcheck.timer.j2
     dest: /usr/lib/systemd/system/ipa-healthcheck.timer
-    mode: 0644
+    mode: "0644"
   notify:
     - Restart ipa-healthcheck service
     - Restart ipa-healthcheck timer
@@ -25,9 +25,9 @@
   ansible.builtin.unarchive:
     src: "{{ ipahealthcheck_exporter_download_url }}"
     dest: "{{ ipahealthcheck_exporter_install_path }}"
-    remote_src: yes
+    remote_src: true
     extra_opts: [--strip-components=1]
-    mode: 0750
+    mode: "0750"
     owner: "{{ ipahealthcheck_exporter_user }}"
     group: "{{ ipahealthcheck_exporter_group }}"
   notify: Restart ipahealthcheck-exporter
