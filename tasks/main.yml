@@ -21,6 +21,15 @@
     shell: /bin/false
     home: "{{ ipahealthcheck_exporter_install_path }}"
 
+- name: Allow ipahealthcheck-exporter to run ipa-healthcheck as root
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/ipahealthcheck-exporter
+    content: "ipahealthcheck-exporter ALL=(root) NOPASSWD: /usr/bin/ipa-healthcheck"
+    owner: root
+    group: root
+    mode: '0440'
+    validate: /usr/sbin/visudo -cf %s
+
 - name: Download and extract ipahealthcheck_exporter executable
   ansible.builtin.unarchive:
     src: "{{ ipahealthcheck_exporter_download_url }}"
