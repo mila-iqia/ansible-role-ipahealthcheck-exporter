@@ -6,7 +6,7 @@ After=basic.target network.target
 [Service]
 User={{ ipahealthcheck_exporter_user }}
 Group={{ ipahealthcheck_exporter_group }}
-ExecStart={{ ipahealthcheck_exporter_install_path }}/ipahealthcheck_exporter
+ExecStart={{ ipahealthcheck_exporter_install_path }}/ipahealthcheck_exporter -sudo
 
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
